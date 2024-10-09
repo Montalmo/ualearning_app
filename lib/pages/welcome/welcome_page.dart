@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'package:ualearning_app/utitlits/extentions.dart';
+
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
 
@@ -19,10 +21,7 @@ class WelcomePage extends StatelessWidget {
                   Text(
                     'First See Learning',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                        color: Colors.blueGrey,
-                        fontSize: 24,
-                        fontWeight: FontWeight.w600),
+                    style: context.textTheme.titleLarge,
                   ),
                 ],
               ),
