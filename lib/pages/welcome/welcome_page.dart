@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ualearning_app/constants/gap.dart';
 
 import 'package:ualearning_app/utitlits/extentions.dart';
 
@@ -18,6 +19,7 @@ class WelcomePage extends StatelessWidget {
                     'assets/images/firstsee_learnin_pic.png',
                     fit: BoxFit.fitHeight,
                   ),
+                  AppGaps.gapH16,
                   Text(
                     'First See Learning',
                     textAlign: TextAlign.center,
@@ -28,10 +30,10 @@ class WelcomePage extends StatelessWidget {
               Image.asset('assets/images/idea_pic.png'),
             ],
           ),
-          Positioned(
-            child: Text('Widget one'),
+          const Positioned(
             bottom: 24,
             left: 24,
+            child: Text('Widget one'),
           ),
         ],
       ),
