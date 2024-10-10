@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+import 'package:ualearning_app/theme/color_pallet.dart';
+
+TextTheme appTextTheme = const TextTheme(
+  displayLarge: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 56,
+      color: AppColorPallet.TextPrimaryColor),
+  displayMedium: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 48,
+      color: AppColorPallet.TextPrimaryColor),
+  displaySmall: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 40,
+      color: AppColorPallet.TextPrimaryColor),
+  headlineLarge: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 32,
+      color: AppColorPallet.TextPrimaryColor),
+  headlineMedium: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 28,
+      color: AppColorPallet.TextPrimaryColor),
+  headlineSmall: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 24,
+      color: AppColorPallet.TextPrimaryColor),
+  titleLarge: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 20,
+      color: AppColorPallet.TextPrimaryColor),
+  titleMedium: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 18,
+      color: AppColorPallet.TextPrimaryColor),
+  titleSmall: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 16,
+      color: AppColorPallet.TextPrimaryColor),
+  bodyLarge: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 16,
+      color: AppColorPallet.TextPrimaryColor),
+  bodyMedium: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 14,
+      color: AppColorPallet.TextPrimaryColor),
+  bodySmall: TextStyle(
+      fontWeight: FontWeight.w400,
+      fontSize: 12,
+      color: AppColorPallet.TextPrimaryColor),
+);
