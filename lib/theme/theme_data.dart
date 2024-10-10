@@ -6,4 +6,5 @@ ThemeData appThemedata = ThemeData(
   useMaterial3: true,
   fontFamily: 'Oswald',
   textTheme: appTextTheme,
+  elevatedButtonTheme: appElevatedButtonThemeData,
 );

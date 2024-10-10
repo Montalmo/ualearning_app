@@ -18,33 +18,46 @@ class AppOnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Image.asset(
-          imagePath,
-          fit: BoxFit.fitHeight,
-        ),
-        AppGaps.gapH16,
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Text(
-            title,
-            textAlign: TextAlign.center,
-            style: context.textTheme.titleLarge,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16.0,
+        vertical: 24.0,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Image.asset(
+            imagePath,
+            fit: BoxFit.fitHeight,
           ),
-        ),
-        AppGaps.gapH8,
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
-          child: Text(
-            description,
-            textAlign: TextAlign.center,
-            style: context.textTheme.bodyMedium!
-                .copyWith(color: AppColorPallet.TextSecondaryColor),
+          AppGaps.gapH16,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Text(
+              title,
+              textAlign: TextAlign.center,
+              style: context.textTheme.titleLarge,
+            ),
           ),
-        ),
-        AppGaps.gapH24,
-      ],
+          AppGaps.gapH8,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
+            child: Text(
+              description,
+              textAlign: TextAlign.center,
+              style: context.textTheme.bodyMedium!
+                  .copyWith(color: AppColorPallet.textSecondaryColor),
+            ),
+          ),
+          AppGaps.gapH24,
+          ElevatedButton(
+            onPressed: () {},
+            child: Text(
+              'Next',
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
