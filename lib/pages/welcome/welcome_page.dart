@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ualearning_app/constants/gap.dart';
-
-import 'package:ualearning_app/utitlits/extentions.dart';
+import 'package:ualearning_app/widgets/onboard_page_widget.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});
@@ -12,22 +10,30 @@ class WelcomePage extends StatelessWidget {
       body: Stack(
         children: [
           PageView(
-            children: [
-              Column(
-                children: [
-                  Image.asset(
-                    'assets/images/firstsee_learnin_pic.png',
-                    fit: BoxFit.fitHeight,
-                  ),
-                  AppGaps.gapH16,
-                  Text(
-                    'First See Learning',
-                    textAlign: TextAlign.center,
-                    style: context.textTheme.titleLarge,
-                  ),
-                ],
+            children: const [
+              //* First welcomw page
+              AppOnboardingPage(
+                title: 'First See Learning',
+                description:
+                    'Forget about of paper all knowlege in one learning',
+                imagePath: 'assets/images/firstsee_learnin_pic.png',
               ),
-              Image.asset('assets/images/idea_pic.png'),
+
+              //* Second welcome page
+              AppOnboardingPage(
+                title: 'Connect With Everyone',
+                description:
+                    'Always keep in touch yor tutor and friens. Let`s get connected',
+                imagePath: 'assets/images/connect_pic.png',
+              ),
+
+              //* Third welcome page
+              AppOnboardingPage(
+                title: 'Always Facinated Learning',
+                description:
+                    'Anywere, anytime. The time is st your discreetion. So study wherever you can',
+                imagePath: 'assets/images/idea_pic.png',
+              ),
             ],
           ),
           const Positioned(
