@@ -10,11 +10,16 @@ class AppOnboardingPage extends StatelessWidget {
     required this.title,
     required this.description,
     required this.imagePath,
+    required this.index,
+    required this.pageController, required this.onPress,
   });
 
   final String title;
   final String description;
   final String imagePath;
+  final int index;
+  final PageController pageController;
+  final VoidCallback onPress;
 
   @override
   Widget build(BuildContext context) {
@@ -51,9 +56,9 @@ class AppOnboardingPage extends StatelessWidget {
           ),
           AppGaps.gapH24,
           ElevatedButton(
-            onPressed: () {},
+            onPressed: onPress,
             child: Text(
-              'Next',
+              'Next'.toUpperCase(),
             ),
           ),
         ],

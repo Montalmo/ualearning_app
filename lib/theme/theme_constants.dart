@@ -57,6 +57,7 @@ ElevatedButtonThemeData appElevatedButtonThemeData = ElevatedButtonThemeData(
   style: ElevatedButton.styleFrom(
     backgroundColor: AppColorPallet.mainColor,
     foregroundColor: AppColorPallet.whiteColor,
+    side: const BorderSide(color: AppColorPallet.buttonBorderColor),
     padding: const EdgeInsets.symmetric(
       horizontal: 24.0,
       vertical: 12.0,
