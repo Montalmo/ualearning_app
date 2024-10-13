@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:ualearning_app/pages/welcome/welcome_page.dart';
+
+import 'package:ualearning_app/router/router.dart';
 import 'package:ualearning_app/theme/theme_data.dart';
 
 void main() {
@@ -12,11 +13,11 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: appThemedata,
-      home: WelcomePage(),
+      routerConfig: router,
     );
   }
 }

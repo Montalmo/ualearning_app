@@ -64,3 +64,15 @@ ElevatedButtonThemeData appElevatedButtonThemeData = ElevatedButtonThemeData(
     ),
   ),
 );
+
+ColorScheme appColorScheme = const ColorScheme(
+  brightness: Brightness.light,
+  primary: AppColorPallet.mainColor,
+  onPrimary: AppColorPallet.textPrimaryColor,
+  secondary: AppColorPallet.textSecondaryColor,
+  onSecondary: AppColorPallet.whiteColor,
+  error: Colors.redAccent,
+  onError: Colors.black54,
+  surface: AppColorPallet.whiteColor,
+  onSurface: AppColorPallet.textPrimaryColor,
+);

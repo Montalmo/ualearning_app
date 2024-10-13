@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:ualearning_app/constants/gap.dart';
 import 'package:ualearning_app/theme/color_pallet.dart';
 import 'package:ualearning_app/utitlits/extentions.dart';
+import 'package:ualearning_app/widgets/button_widget.dart';
 
 class AppOnboardingPage extends StatelessWidget {
   const AppOnboardingPage({
@@ -11,7 +12,8 @@ class AppOnboardingPage extends StatelessWidget {
     required this.description,
     required this.imagePath,
     required this.index,
-    required this.pageController, required this.onPress,
+    required this.pageController,
+    required this.onPress,
   });
 
   final String title;
@@ -30,10 +32,15 @@ class AppOnboardingPage extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            imagePath,
-            fit: BoxFit.fitHeight,
+          SizedBox(
+            width: 300,
+            height: 300,
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.fitHeight,
+            ),
           ),
           AppGaps.gapH16,
           Padding(
@@ -55,11 +62,10 @@ class AppOnboardingPage extends StatelessWidget {
             ),
           ),
           AppGaps.gapH24,
-          ElevatedButton(
-            onPressed: onPress,
-            child: Text(
-              'Next'.toUpperCase(),
-            ),
+          AppElevatedButton(
+            buttonType: AppElevatedButtonType.primary,
+            lable: index != 2 ? 'Next' : 'Get started',
+            onPress: onPress,
           ),
         ],
       ),

@@ -1,30 +1,40 @@
 import 'package:flutter/material.dart';
+import 'package:dots_indicator/dots_indicator.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+import 'package:ualearning_app/pages/welcome/welcome_page_controller.dart';
 import 'package:ualearning_app/widgets/onboard_page_widget.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends ConsumerWidget {
   WelcomePage({super.key});
 
   final PageController _pageController = PageController(initialPage: 0);
 
-  slideOnboardingPage(int index, PageController pageController) {
-    if (pageController.hasClients) {
-      if (index < 3) {
-        pageController.animateToPage(
-          index,
-          duration: const Duration(milliseconds: 250),
-          curve: Curves.easeInOut,
-        );
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final index = ref.watch(welcomePageIndexProvider);
+
+    slideOnboardingPage(int index, PageController pageController) {
+      if (pageController.hasClients) {
+        if (index < 3) {
+          pageController.animateToPage(
+            index,
+            duration: const Duration(milliseconds: 250),
+            curve: Curves.easeInOut,
+          );
+        }
       }
     }
-  }
 
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        alignment: Alignment.topCenter,
         children: [
           PageView(
             controller: _pageController,
+            onPageChanged: (value) {
+              ref.read(welcomePageIndexProvider.notifier).state = value;
+            },
             children: [
               //* First welcomw page
               AppOnboardingPage(
@@ -66,10 +76,19 @@ class WelcomePage extends StatelessWidget {
               ),
             ],
           ),
-          const Positioned(
-            bottom: 24,
-            left: 24,
-            child: Text('Widget one'),
+          Positioned(
+            bottom: 32,
+            child: DotsIndicator(
+              dotsCount: 3,
+              position: index,
+              mainAxisAlignment: MainAxisAlignment.center,
+              decorator: DotsDecorator(
+                size: const Size.square(8),
+                activeSize: const Size(24, 8),
+                activeShape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8)),
+              ),
+            ),
           ),
         ],
       ),
