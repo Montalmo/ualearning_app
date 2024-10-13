@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
-import 'package:ualearning_app/pages/welcome/welcome_page_controller.dart';
+import 'package:ualearning_app/pages/welcome/presentation/welcome_page_controller.dart';
 import 'package:ualearning_app/widgets/onboard_page_widget.dart';
 
 class WelcomePage extends ConsumerWidget {
@@ -67,7 +68,7 @@ class WelcomePage extends ConsumerWidget {
                 index: 2,
                 pageController: _pageController,
                 onPress: () {
-                  slideOnboardingPage(3, _pageController);
+                  context.push('/auth');
                 },
                 title: 'Always Facinated Learning',
                 description:
